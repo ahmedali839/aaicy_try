@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Globe, Palette, BrainCircuit, Bot, Mail, Phone } from "lucide-react";
-import FlowithFooter from "./FlowithFooter"; // it's footer animation component
+import FlowithFooter from "./FlowithFooter"; // it's footer (AAICY) water animation component
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
