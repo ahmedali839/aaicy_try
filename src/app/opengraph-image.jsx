@@ -51,7 +51,7 @@ export default async function Image() {
               fontWeight: 800,
               letterSpacing: "-0.05em",
               margin: 0,
-              color: "white",
+              color: "#ffffff",
               display: "flex",
               gap: "8px",
             }}

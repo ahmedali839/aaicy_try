@@ -11,11 +11,11 @@ export default function Error({ error, reset }) {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden bg-white dark:bg-black text-black dark:text-white">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-red-500/20 to-orange-500/20 blur-[150px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-linear-to-tr from-red-500/20 to-orange-500/20 blur-[150px] rounded-full pointer-events-none -z-10" />
       <div className="bg-red-500/10 p-6 rounded-full mb-8 border border-red-500/30">
         <AlertTriangle className="w-16 h-16 text-red-500" />
       </div>
-      <h1 className="text-4xl font-extrabold tracking-tighter mb-4 text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">
+      <h1 className="text-4xl font-extrabold tracking-tighter mb-4 text-transparent bg-clip-text bg-linear-to-r from-red-500 to-orange-500">
         Something went wrong!
       </h1>
       <p className="text-gray-600 dark:text-gray-400 max-w-md text-center mb-10">
