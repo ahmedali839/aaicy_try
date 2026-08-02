@@ -17,6 +17,9 @@ import Divider from "../components/Divider";
 import MagneticButton from "../components/MagneticButton";
 import { ExternalLink, ShieldCheck } from "lucide-react";
 import CoreFeaturesScroll from "../components/CoreFeaturesScroll";
+import ServicesSection from "../components/ServiceLists";
+import TechStackTicker from "../components/TechStackTicker";
+import CrmAutomationHub from "../components/Hero-workflow";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -166,7 +169,6 @@ export default function Home() {
         ref={parallaxBgRef}
         className="absolute top-0 left-1/2 -translate-x-1/2 w-200 h-200 bg-linear-to-tr from-brand-blue/20 to-brand-purple/20 blur-[120px] rounded-full pointer-events-none -z-10 will-change-transform"
       />
-
       {/* Hero Section */}
       <section
         ref={heroRef}
@@ -204,8 +206,13 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Heo Workflow section */}
+      <CrmAutomationHub />
+
       {/* Services Grid */}
-      <section
+      <ServicesSection />
+      {/* // old service section for reference */}
+      {/* <section
         ref={servicesRef}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20"
       >
@@ -234,7 +241,10 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
+
+      {/* TechStackTicker */}
+      <TechStackTicker />
 
       {/* Advanced Stack Section with Dividers */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 mb-16 relative">
@@ -289,7 +299,7 @@ export default function Home() {
       </section>
 
       {/* scroll-base-card.js */}
-      {/* <CoreFeaturesScroll /> */}
+      <CoreFeaturesScroll />
 
       {/* --- WHY WE DO WHAT WE DO SECTION --- */}
       <div className="w-full bg-white py-24 px-4 sm:px-6 lg:px-8">
@@ -413,6 +423,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-
