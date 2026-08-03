@@ -224,7 +224,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* <VideoHero /> */}
+      <VideoHero />
 
       {/* Services Grid */}
       <ServicesSection />
