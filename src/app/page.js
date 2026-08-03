@@ -20,7 +20,7 @@ import CoreFeaturesScroll from "../components/CoreFeaturesScroll";
 import ServicesSection from "../components/ServiceLists";
 import TechStackTicker from "../components/TechStackTicker";
 import VideoHero from "../components/Video-Hero";
-import BlurTextScroller from "../components/Arrow-Scrollbase";
+import BlurTextScroller from "../components/Arrow-Scrollbase"; // added scroll base component
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
