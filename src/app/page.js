@@ -207,7 +207,6 @@ export default function Home() {
         </div>
       </section>
 
-     
       {/* Video Hero  */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 min-h-screen flex items-center">
         <div className="flex justify-center w-full">
