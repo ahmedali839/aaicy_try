@@ -1049,401 +1049,9 @@
 
 
 
-// "use client";
-
-// import { useEffect, useRef, useState } from "react";
-// import { 
-//   PhoneCall, 
-//   Workflow, 
-//   Globe, 
-//   Bot, 
-//   ChevronLeft, 
-//   ChevronRight,
-//   Sparkles, 
-//   Cpu, 
-//   Zap, 
-//   Terminal, 
-//   Layers, 
-//   Database, 
-//   Code2 
-// } from "lucide-react";
-// import gsap from "gsap";
-
-// // --- Data Configuration ---
-
-// const services = [
-//   {
-//     title: "24/7 AI Calling Agents",
-//     description: "Never miss a booking. Our AI voice agents handle customer calls, take orders, and manage appointments around the clock.",
-//     icon: PhoneCall,
-//   },
-//   {
-//     title: "CRM Automation",
-//     description: "Streamline your operations. We build automated workflows that nurture leads and manage customer relationships effortlessly.",
-//     icon: Workflow,
-//   },
-//   {
-//     title: "Website Development",
-//     description: "From scratch builds and renewals to adding complex features and fixing broken sites. We engineer robust web experiences.",
-//     icon: Globe,
-//   },
-//   {
-//     title: "AI Chatbots",
-//     description: "Intelligent, context-aware chatbots tailored for small businesses to provide instant, accurate customer support.",
-//     icon: Bot,
-//   },
-// ];
-
-// const testimonials = [
-//   {
-//     quote: "“AAICY entirely transformed how we operate. Their AI Calling Agent completely eliminated missed calls, increasing our monthly revenue by exactly 30%.”",
-//     name: "Owner & Management",
-//     role: "X Restaurant",
-//     image: "https://images.pexels.com/photos/6519891/pexels-photo-6519891.jpeg",
-//     bgColor: "bg-[#1a3b2b]",
-//     accentColor: "bg-[#FF5C00]"
-//   },
-//   {
-//     quote: "“Our conversion rates skyrocketed after integrating their custom web architecture and automated workflows. The level of detail and execution is unmatched.”",
-//     name: "Sarah Jenkins",
-//     role: "Founder, Apex E-Commerce",
-//     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
-//     bgColor: "bg-[#1e293b]",
-//     accentColor: "bg-[#4A80FF]"
-//   },
-//   {
-//     quote: "“The AI chatbots handle 80% of our tier-1 customer support effortlessly. It has saved our internal team countless hours every single week.”",
-//     name: "David Miller",
-//     role: "CTO, NexaTech Solutions",
-//     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
-//     bgColor: "bg-[#3b1a3b]",
-//     accentColor: "bg-[#A055FF]"
-//   },
-//   {
-//     quote: "“From zero to a fully functional digital platform in record time. Their development team is world-class when it comes to speed and scalability.”",
-//     name: "Elena Rostova",
-//     role: "Director, Innovate Studio",
-//     image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
-//     bgColor: "bg-[#1a353b]",
-//     accentColor: "bg-[#10B981]"
-//   }
-// ];
-
-// const team = [
-//   {
-//     name: "Alex Sterling",
-//     position: "Founder & Lead Engineer",
-//     image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=400&q=80",
-//     intro: "Driving AI innovation and core business logic.",
-//   },
-//   {
-//     name: "Sarah Chen",
-//     position: "Head of AI Solutions",
-//     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
-//     intro: "Architecting intelligent conversational agents.",
-//   },
-//   {
-//     name: "Marcus Johnson",
-//     position: "Full-Stack Developer",
-//     image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
-//     intro: "Crafting flawless, responsive web experiences.",
-//   },
-//   {
-//     name: "Elena Rodriguez",
-//     position: "Automation Specialist",
-//     image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
-//     intro: "Streamlining complex business CRM workflows.",
-//   },
-// ];
-
-// const aiTools = [
-//   { name: "Claude AI", category: "Anthropic LLM", icon: Sparkles, color: "text-purple-600 bg-purple-50" },
-//   { name: "OpenAI GPT-4", category: "Core Intelligence", icon: Cpu, color: "text-emerald-600 bg-emerald-50" },
-//   { name: "Google Gemini", category: "Multimodal AI", icon: Zap, color: "text-blue-600 bg-blue-50" },
-//   { name: "Replit Agent", category: "Autonomous Dev", icon: Terminal, color: "text-orange-600 bg-orange-50" },
-//   { name: "Midjourney", category: "Generative Visuals", icon: Layers, color: "text-indigo-600 bg-indigo-50" },
-//   { name: "Groq AI", category: "Ultra-Fast Inference", icon: Cpu, color: "text-rose-600 bg-rose-50" },
-//   { name: "Anthropic", category: "Safety & Alignment", icon: Sparkles, color: "text-purple-600 bg-purple-50" },
-//   { name: "Hugging Face", category: "Open Source Hub", icon: Database, color: "text-amber-600 bg-amber-50" },
-// ];
-
-// const platforms = [
-//   { name: "React.js", category: "UI Library", icon: Code2, color: "text-cyan-600 bg-cyan-50" },
-//   { name: "Next.js 15", category: "Full-Stack Framework", icon: Globe, color: "text-slate-900 bg-slate-100" },
-//   { name: "Google Cloud", category: "Cloud Infrastructure", icon: Database, color: "text-blue-600 bg-blue-50" },
-//   { name: "Perplexity", category: "Neural Search", icon: Sparkles, color: "text-teal-600 bg-teal-50" },
-//   { name: "Vercel", category: "Edge Deployment", icon: Zap, color: "text-slate-900 bg-slate-100" },
-//   { name: "Node.js", category: "Backend Runtime", icon: Terminal, color: "text-green-600 bg-green-50" },
-//   { name: "MongoDB", category: "NoSQL Database", icon: Database, color: "text-emerald-600 bg-emerald-50" },
-//   { name: "Tailwind CSS", category: "Styling System", icon: Layers, color: "text-sky-600 bg-sky-50" },
-// ];
-
-// // --- Component ---
-
-// export default function AboutUs() {
-//   const containerRef = useRef(null);
-//   const [currentSlide, setCurrentSlide] = useState(0);
-
-//   // Carousel Navigation Handlers
-//   const nextSlide = () => {
-//     setCurrentSlide((prev) => (prev + 1) % testimonials.length);
-//   };
-
-//   const prevSlide = () => {
-//     setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-//   };
-
-//   useEffect(() => {
-//     let ctx = gsap.context(() => {
-//       gsap.fromTo(
-//         ".animate-up",
-//         { y: 40, opacity: 0 },
-//         { y: 0, opacity: 1, duration: 1, stagger: 0.1, ease: "power3.out" }
-//       );
-//     }, containerRef);
-
-//     return () => ctx.revert();
-//   }, []);
-
-//   return (
-//     <div className="relative overflow-hidden bg-white text-slate-900 selection:bg-[#FF6B00] selection:text-white" ref={containerRef}>
-      
-//       {/* Background Subtle Gradient */}
-//       <div className="absolute top-0 left-0 w-full h-[800px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-50/80 via-purple-50/40 to-white pointer-events-none -z-10" />
-
-//       {/* --- HERO SECTION --- */}
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24 text-center">
-//         <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 animate-up text-[#111827]">
-//           Building the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4A80FF] to-[#A055FF]">Future</span><br />
-//           of Web & AI
-//         </h1>
-//         <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-10 animate-up">
-//           Digital Excellence for Visionaries. We craft cutting-edge websites and intelligent AI solutions tailored to solve real business problems.
-//         </p>
-//         <div className="flex justify-center gap-4 animate-up">
-//           <button className="bg-[#FF6B00] hover:bg-[#E66000] text-white px-8 py-3 rounded-full font-semibold transition-colors shadow-lg shadow-orange-500/30">
-//             Get Started →
-//           </button>
-//           <button className="bg-gray-100 hover:bg-gray-200 text-slate-900 px-8 py-3 rounded-full font-semibold transition-colors border border-gray-200">
-//             View Services
-//           </button>
-//         </div>
-//       </div>
-
-//       {/* --- TESTIMONIAL CAROUSEL SECTION --- */}
-//       <div className="w-full bg-white py-24">
-//         <div className="max-w-6xl mx-auto px-4 animate-up">
-//           <div className="overflow-hidden relative">
-//             <div 
-//               className="flex transition-transform duration-500 ease-out"
-//               style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-//             >
-//               {testimonials.map((item, index) => (
-//                 <div key={index} className="w-full flex-shrink-0 px-2">
-//                   <div className="flex justify-center mb-12">
-//                     <div className={`relative w-full max-w-[700px] h-[350px] md:h-[450px] ${item.bgColor} rounded-[200px] overflow-hidden flex justify-center items-end shadow-xl`}>
-//                       <div className={`absolute w-[250px] md:w-[320px] h-[150%] ${item.accentColor} -rotate-12 z-0 opacity-90`} />
-//                       <img 
-//                         src={item.image} 
-//                         alt={item.name} 
-//                         className="relative z-10 h-[90%] md:h-[95%] object-cover object-bottom drop-shadow-2xl" 
-//                       />
-//                     </div>
-//                   </div>
-//                   <h3 className="text-3xl md:text-5xl lg:text-6xl font-black text-center text-[#111827] leading-[1.1] max-w-5xl mx-auto tracking-tight mb-8">
-//                     {item.quote}
-//                   </h3>
-//                   <div className="text-center">
-//                     <p className="font-semibold text-gray-900 text-lg">{item.name}</p>
-//                     <p className="text-gray-500 text-sm">{item.role}</p>
-//                   </div>
-//                 </div>
-//               ))}
-//             </div>
-//           </div>
-
-//           <div className="flex items-center justify-center gap-6 mt-12">
-//             <button 
-//               onClick={prevSlide}
-//               className="p-3 rounded-full border border-gray-200 hover:bg-gray-100 transition-colors shadow-sm text-gray-700"
-//               aria-label="Previous Slide"
-//             >
-//               <ChevronLeft className="w-6 h-6" />
-//             </button>
-//             <div className="flex items-center gap-2">
-//               {testimonials.map((_, index) => (
-//                 <button
-//                   key={index}
-//                   onClick={() => setCurrentSlide(index)}
-//                   className={`h-3 rounded-full transition-all duration-300 ${
-//                     currentSlide === index ? "w-8 bg-[#FF5C00]" : "w-3 bg-gray-300"
-//                   }`}
-//                   aria-label={`Go to slide ${index + 1}`}
-//                 />
-//               ))}
-//             </div>
-//             <button 
-//               onClick={nextSlide}
-//               className="p-3 rounded-full border border-gray-200 hover:bg-gray-100 transition-colors shadow-sm text-gray-700"
-//               aria-label="Next Slide"
-//             >
-//               <ChevronRight className="w-6 h-6" />
-//             </button>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* --- SERVICES SECTION --- */}
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-//         <h2 className="text-4xl font-extrabold mb-16 text-center text-[#111827] animate-up tracking-tight">Our Services</h2>
-//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-//           {services.map((service, index) => {
-//             const Icon = service.icon;
-//             return (
-//               <div key={index} className="animate-up bg-white rounded-3xl p-8 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-shadow duration-300">
-//                 <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-blue-600">
-//                   <Icon className="w-7 h-7" />
-//                 </div>
-//                 <h3 className="text-xl font-bold mb-3 text-slate-900">{service.title}</h3>
-//                 <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
-//               </div>
-//             );
-//           })}
-//         </div>
-//       </div>
-
-//       {/* --- ENTERPRISE TECH & AI ECOSYSTEM TICKER --- */}
-//       <div className="w-full bg-gradient-to-b from-slate-50/60 via-white to-slate-50/60 py-28 border-y border-slate-200/80 overflow-hidden marquee-container relative">
-//         <style dangerouslySetInnerHTML={{ __html: `
-//           @keyframes scrollLeft {
-//             0% { transform: translateX(0); }
-//             100% { transform: translateX(-50%); }
-//           }
-//           @keyframes scrollRight {
-//             0% { transform: translateX(-50%); }
-//             100% { transform: translateX(0); }
-//           }
-//           .animate-scroll-left {
-//             display: flex;
-//             width: max-content;
-//             animation: scrollLeft 40s linear infinite;
-//           }
-//           .animate-scroll-right {
-//             display: flex;
-//             width: max-content;
-//             animation: scrollRight 40s linear infinite;
-//           }
-//           .marquee-container:hover .animate-scroll-left,
-//           .marquee-container:hover .animate-scroll-right {
-//             animation-play-state: paused;
-//           }
-//         `}} />
-
-//         <div className="max-w-7xl mx-auto px-4 mb-16 text-center animate-up">
-//           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200/60 text-orange-600 text-xs font-semibold tracking-wide uppercase mb-4 shadow-sm">
-//             <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-//             Ecosystem & Infrastructure
-//           </div>
-//           <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
-//             Technologies We Utilize
-//           </h2>
-//           <p className="text-slate-600 mt-3 text-lg max-w-2xl mx-auto font-normal">
-//             Engineered with industry-leading frameworks, advanced LLM models, and ultra-scalable cloud architectures.
-//           </p>
-//         </div>
-
-//         <div className="relative w-full overflow-hidden">
-//           <div className="absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
-//           <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
-
-//           {/* ROW 1: AI Tools & LLMs */}
-//           <div className="flex animate-scroll-left gap-5 mb-6">
-//             {[...aiTools, ...aiTools].map((tool, index) => {
-//               const IconComponent = tool.icon;
-//               return (
-//                 <div 
-//                   key={`ai-${index}`} 
-//                   className="group bg-white/90 backdrop-blur-md px-5 py-3.5 rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-slate-200/80 hover:border-slate-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-0.5 transition-all duration-300 cursor-default flex items-center gap-4 shrink-0"
-//                 >
-//                   <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${tool.color} transition-transform group-hover:scale-110 duration-300`}>
-//                     <IconComponent className="w-5 h-5" />
-//                   </div>
-//                   <div>
-//                     <h4 className="font-bold text-slate-900 text-sm tracking-tight">{tool.name}</h4>
-//                     <p className="text-slate-400 text-xs font-medium">{tool.category}</p>
-//                   </div>
-//                 </div>
-//               );
-//             })}
-//           </div>
-
-//           {/* ROW 2: Platforms & Frameworks */}
-//           <div className="flex animate-scroll-right gap-5">
-//             {[...platforms, ...platforms].map((tech, index) => {
-//               const IconComponent = tech.icon;
-//               return (
-//                 <div 
-//                   key={`tech-${index}`} 
-//                   className="group bg-white/90 backdrop-blur-md px-5 py-3.5 rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-slate-200/80 hover:border-slate-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-0.5 transition-all duration-300 cursor-default flex items-center gap-4 shrink-0"
-//                 >
-//                   <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${tech.color} transition-transform group-hover:scale-110 duration-300`}>
-//                     <IconComponent className="w-5 h-5" />
-//                   </div>
-//                   <div>
-//                     <h4 className="font-bold text-slate-900 text-sm tracking-tight">{tech.name}</h4>
-//                     <p className="text-slate-400 text-xs font-medium">{tech.category}</p>
-//                   </div>
-//                 </div>
-//               );
-//             })}
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* --- TEAM SECTION --- */}
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-//         <h2 className="text-4xl font-extrabold mb-16 text-center text-[#111827] animate-up tracking-tight">Meet the Experts</h2>
-//         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-//           {team.map((member, index) => (
-//             <div key={index} className="animate-up group relative rounded-3xl overflow-hidden bg-gray-100">
-//               <img 
-//                 src={member.image} 
-//                 alt={member.name} 
-//                 loading="lazy"
-//                 className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105" 
-//               />
-//               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90" />
-//               <div className="absolute bottom-0 left-0 p-6 w-full">
-//                 <h4 className="text-xl font-bold text-white mb-1">{member.name}</h4>
-//                 <p className="text-blue-300 font-medium text-sm mb-3">{member.position}</p>
-//                 <p className="text-gray-300 text-sm leading-snug">{member.intro}</p>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-
-//     </div>
-//   );
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 "use client";
 
-import React, { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { 
   PhoneCall, 
   Workflow, 
@@ -1457,309 +1065,370 @@ import {
   Terminal, 
   Layers, 
   Database, 
-  Code2,
-  ArrowUpRight
+  Code2 
 } from "lucide-react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
-// --- Data Models ---
+// --- Data Configuration ---
 
 const services = [
   {
-    title: "AI Voice Agents",
-    description: "24/7 autonomous call handling, appointment routing, and instant voice response.",
+    title: "24/7 AI Calling Agents",
+    description: "Never miss a booking. Our AI voice agents handle customer calls, take orders, and manage appointments around the clock.",
     icon: PhoneCall,
-    badge: "Voice AI"
   },
   {
     title: "CRM Automation",
-    description: "End-to-end lead pipeline synchronization and automated workflow triggers.",
+    description: "Streamline your operations. We build automated workflows that nurture leads and manage customer relationships effortlessly.",
     icon: Workflow,
-    badge: "Workflows"
   },
   {
-    title: "Web Architecture",
-    description: "High-performance full-stack applications engineered for speed and conversion.",
+    title: "Website Development",
+    description: "From scratch builds and renewals to adding complex features and fixing broken sites. We engineer robust web experiences.",
     icon: Globe,
-    badge: "Next.js 15"
   },
   {
-    title: "Contextual Chatbots",
-    description: "Tailored LLM support agents trained on your custom knowledge base.",
+    title: "AI Chatbots",
+    description: "Intelligent, context-aware chatbots tailored for small businesses to provide instant, accurate customer support.",
     icon: Bot,
-    badge: "LLM Ops"
   },
 ];
 
 const testimonials = [
   {
-    quote: "“AAICY eliminated missed customer calls entirely, boosting our monthly recurring bookings by 30% within 30 days.”",
-    name: "Alex Vance",
-    role: "Operations Director, X Restaurant Group",
-    image: "https://images.pexels.com/photos/6519891/pexels-photo-6519891.jpeg"
+    quote: "“AAICY entirely transformed how we operate. Their AI Calling Agent completely eliminated missed calls, increasing our monthly revenue by exactly 30%.”",
+    name: "Owner & Management",
+    role: "X Restaurant",
+    image: "https://images.pexels.com/photos/6519891/pexels-photo-6519891.jpeg",
+    bgColor: "bg-[#1a3b2b]",
+    accentColor: "bg-[#FF5C00]"
   },
   {
-    quote: "“Integrating their custom web architecture and automated lead flows doubled our web conversion rate seamlessness.”",
+    quote: "“Our conversion rates skyrocketed after integrating their custom web architecture and automated workflows. The level of detail and execution is unmatched.”",
     name: "Sarah Jenkins",
     role: "Founder, Apex E-Commerce",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80"
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+    bgColor: "bg-[#1e293b]",
+    accentColor: "bg-[#4A80FF]"
   },
   {
-    quote: "“Their AI support bot automatically handles over 80% of our daily Tier-1 user inquiries with absolute accuracy.”",
+    quote: "“The AI chatbots handle 80% of our tier-1 customer support effortlessly. It has saved our internal team countless hours every single week.”",
     name: "David Miller",
     role: "CTO, NexaTech Solutions",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    bgColor: "bg-[#3b1a3b]",
+    accentColor: "bg-[#A055FF]"
+  },
+  {
+    quote: "“From zero to a fully functional digital platform in record time. Their development team is world-class when it comes to speed and scalability.”",
+    name: "Elena Rostova",
+    role: "Director, Innovate Studio",
+    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
+    bgColor: "bg-[#1a353b]",
+    accentColor: "bg-[#10B981]"
   }
 ];
 
-const techList = [
-  { name: "Claude 3.5", icon: Sparkles },
-  { name: "GPT-4o", icon: Cpu },
-  { name: "Gemini Pro", icon: Zap },
-  { name: "Next.js 15", icon: Globe },
-  { name: "React", icon: Code2 },
-  { name: "Node.js", icon: Terminal },
-  { name: "Tailwind CSS", icon: Layers },
-  { name: "MongoDB", icon: Database }
+const team = [
+  {
+    name: "Alex Sterling",
+    position: "Founder & Lead Engineer",
+    image: "https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=400&q=80",
+    intro: "Driving AI innovation and core business logic.",
+  },
+  {
+    name: "Sarah Chen",
+    position: "Head of AI Solutions",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+    intro: "Architecting intelligent conversational agents.",
+  },
+  {
+    name: "Marcus Johnson",
+    position: "Full-Stack Developer",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+    intro: "Crafting flawless, responsive web experiences.",
+  },
+  {
+    name: "Elena Rodriguez",
+    position: "Automation Specialist",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
+    intro: "Streamlining complex business CRM workflows.",
+  },
 ];
 
-export default function ModernAboutUs() {
-  const containerRef = useRef(null);
-  const trackRef = useRef(null);
-  const [activeSlide, setActiveSlide] = useState(0);
+const aiTools = [
+  { name: "Claude AI", category: "Anthropic LLM", icon: Sparkles, color: "text-purple-600 bg-purple-50" },
+  { name: "OpenAI GPT-4", category: "Core Intelligence", icon: Cpu, color: "text-emerald-600 bg-emerald-50" },
+  { name: "Google Gemini", category: "Multimodal AI", icon: Zap, color: "text-blue-600 bg-blue-50" },
+  { name: "Replit Agent", category: "Autonomous Dev", icon: Terminal, color: "text-orange-600 bg-orange-50" },
+  { name: "Midjourney", category: "Generative Visuals", icon: Layers, color: "text-indigo-600 bg-indigo-50" },
+  { name: "Groq AI", category: "Ultra-Fast Inference", icon: Cpu, color: "text-rose-600 bg-rose-50" },
+  { name: "Anthropic", category: "Safety & Alignment", icon: Sparkles, color: "text-purple-600 bg-purple-50" },
+  { name: "Hugging Face", category: "Open Source Hub", icon: Database, color: "text-amber-600 bg-amber-50" },
+];
 
-  const handleSlideChange = (nextIndex) => {
-    let index = nextIndex;
-    if (nextIndex < 0) index = testimonials.length - 1;
-    if (nextIndex >= testimonials.length) index = 0;
-    
-    setActiveSlide(index);
-    if (trackRef.current) {
-      gsap.to(trackRef.current, {
-        xPercent: -index * 100,
-        duration: 0.6,
-        ease: "power2.out"
-      });
-    }
+const platforms = [
+  { name: "React.js", category: "UI Library", icon: Code2, color: "text-cyan-600 bg-cyan-50" },
+  { name: "Next.js 15", category: "Full-Stack Framework", icon: Globe, color: "text-slate-900 bg-slate-100" },
+  { name: "Google Cloud", category: "Cloud Infrastructure", icon: Database, color: "text-blue-600 bg-blue-50" },
+  { name: "Perplexity", category: "Neural Search", icon: Sparkles, color: "text-teal-600 bg-teal-50" },
+  { name: "Vercel", category: "Edge Deployment", icon: Zap, color: "text-slate-900 bg-slate-100" },
+  { name: "Node.js", category: "Backend Runtime", icon: Terminal, color: "text-green-600 bg-green-50" },
+  { name: "MongoDB", category: "NoSQL Database", icon: Database, color: "text-emerald-600 bg-emerald-50" },
+  { name: "Tailwind CSS", category: "Styling System", icon: Layers, color: "text-sky-600 bg-sky-50" },
+];
+
+// --- Component ---
+
+export default function AboutUs() {
+  const containerRef = useRef(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Carousel Navigation Handlers
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % testimonials.length);
   };
 
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      // 1. Synchronized Page Load Elevation
-      gsap.from(".hero-anim", {
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "power2.out"
-      });
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
 
-      // 2. Scroll Reveal for Cards & Sections
-      const revealItems = gsap.utils.toArray(".scroll-reveal");
-      revealItems.forEach((item) => {
-        gsap.from(item, {
-          scrollTrigger: {
-            trigger: item,
-            start: "top 80%"
-          },
-          opacity: 0,
-          y: 30,
-          duration: 0.8,
-          ease: "power2.out"
-        });
-      });
-
-      // 3. Infinite Smooth Tech Marquee Loop
-      const marqueeTrack = containerRef.current.querySelector(".marquee-track");
-      if (marqueeTrack) {
-        const loop = gsap.to(marqueeTrack, {
-          xPercent: -50,
-          repeat: -1,
-          duration: 20,
-          ease: "none"
-        });
-
-        marqueeTrack.parentElement.addEventListener("mouseenter", () => {
-          gsap.to(loop, { timeScale: 0.2, duration: 0.4, ease: "power2.out" });
-        });
-
-        marqueeTrack.parentElement.addEventListener("mouseleave", () => {
-          gsap.to(loop, { timeScale: 1, duration: 0.4, ease: "power2.out" });
-        });
-      }
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".animate-up",
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, stagger: 0.1, ease: "power3.out" }
+      );
     }, containerRef);
 
     return () => ctx.revert();
   }, []);
 
-  const handleHoverEnter = (e) => {
-    gsap.to(e.currentTarget, { scale: 1.03, y: -4, duration: 0.3, ease: "power2.out" });
-  };
-
-  const handleHoverLeave = (e) => {
-    gsap.to(e.currentTarget, { scale: 1, y: 0, duration: 0.3, ease: "power2.out" });
-  };
-
   return (
-    <div ref={containerRef} className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-indigo-500 selection:text-white antialiased">
+    <div className="relative overflow-hidden bg-white text-slate-900 selection:bg-[#FF6B00] selection:text-white" ref={containerRef}>
       
-      {/* Background Radial Glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-gradient-to-b from-indigo-600/10 via-purple-500/5 to-transparent pointer-events-none blur-3xl -z-10" />
+      {/* Background Subtle Gradient */}
+      <div className="absolute top-0 left-0 w-full h-[800px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-50/80 via-purple-50/40 to-white pointer-events-none -z-10" />
 
       {/* --- HERO SECTION --- */}
-      <header className="max-w-5xl mx-auto px-6 pt-28 pb-16 text-center">
-        <div className="hero-anim inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-800 bg-slate-900/80 text-xs text-indigo-400 font-medium mb-6">
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>Next-Gen Web & AI Engineering</span>
-        </div>
-        
-        <h1 className="hero-anim text-4xl sm:text-6xl font-black tracking-tight leading-tight text-white mb-6">
-          Architecting Intelligent Systems for <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">Scale</span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24 text-center">
+        <h1 className="text-5xl md:text-7xl font-black tracking-tight mb-6 animate-up text-[#111827]">
+          Building the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4A80FF] to-[#A055FF]">Future</span><br />
+          of Web & AI
         </h1>
-        
-        <p className="hero-anim text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed mb-8">
-          We blend enterprise web development with autonomous AI workflows to eliminate operational friction and accelerate growth.
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-10 animate-up">
+          Digital Excellence for Visionaries. We craft cutting-edge websites and intelligent AI solutions tailored to solve real business problems.
         </p>
-
-        <div className="hero-anim flex flex-wrap items-center justify-center gap-4">
-          <button 
-            onMouseEnter={handleHoverEnter}
-            onMouseLeave={handleHoverLeave}
-            className="bg-white text-slate-950 font-semibold text-sm px-6 py-3 rounded-full flex items-center gap-2 transition-colors cursor-pointer"
-          >
-            Start a Project <ArrowUpRight className="w-4 h-4" />
+        <div className="flex justify-center gap-4 animate-up">
+          <button className="bg-[#FF6B00] hover:bg-[#E66000] text-white px-8 py-3 rounded-full font-semibold transition-colors shadow-lg shadow-orange-500/30">
+            Get Started →
           </button>
-          <button 
-            onMouseEnter={handleHoverEnter}
-            onMouseLeave={handleHoverLeave}
-            className="bg-slate-900 text-slate-300 border border-slate-800 font-semibold text-sm px-6 py-3 rounded-full hover:bg-slate-800 transition-colors cursor-pointer"
-          >
-            Explore Services
+          <button className="bg-gray-100 hover:bg-gray-200 text-slate-900 px-8 py-3 rounded-full font-semibold transition-colors border border-gray-200">
+            View Services
           </button>
         </div>
-      </header>
+      </div>
 
-      {/* --- SLEEK TECH MARQUEE --- */}
-      <section className="scroll-reveal border-y border-slate-900 bg-slate-950/50 py-6 overflow-hidden relative">
-        <div className="absolute top-0 bottom-0 left-0 w-24 bg-gradient-to-r from-slate-950 to-transparent z-10 pointer-events-none" />
-        <div className="absolute top-0 bottom-0 right-0 w-24 bg-gradient-to-l from-slate-950 to-transparent z-10 pointer-events-none" />
+      {/* --- TESTIMONIAL CAROUSEL SECTION --- */}
+      <div className="w-full bg-white py-24">
+        <div className="max-w-6xl mx-auto px-4 animate-up">
+          <div className="overflow-hidden relative">
+            <div 
+              className="flex transition-transform duration-500 ease-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+              {testimonials.map((item, index) => (
+                <div key={index} className="w-full flex-shrink-0 px-2">
+                  <div className="flex justify-center mb-12">
+                    <div className={`relative w-full max-w-[700px] h-[350px] md:h-[450px] ${item.bgColor} rounded-[200px] overflow-hidden flex justify-center items-end shadow-xl`}>
+                      <div className={`absolute w-[250px] md:w-[320px] h-[150%] ${item.accentColor} -rotate-12 z-0 opacity-90`} />
+                      <img 
+                        src={item.image} 
+                        alt={item.name} 
+                        className="relative z-10 h-[90%] md:h-[95%] object-cover object-bottom drop-shadow-2xl" 
+                      />
+                    </div>
+                  </div>
+                  <h3 className="text-3xl md:text-5xl lg:text-6xl font-black text-center text-[#111827] leading-[1.1] max-w-5xl mx-auto tracking-tight mb-8">
+                    {item.quote}
+                  </h3>
+                  <div className="text-center">
+                    <p className="font-semibold text-gray-900 text-lg">{item.name}</p>
+                    <p className="text-gray-500 text-sm">{item.role}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
 
-        <div className="flex overflow-hidden">
-          <div className="marquee-track flex gap-8 shrink-0 items-center will-change-transform">
-            {[...techList, ...techList, ...techList].map((tech, index) => {
-              const IconComp = tech.icon;
+          <div className="flex items-center justify-center gap-6 mt-12">
+            <button 
+              onClick={prevSlide}
+              className="p-3 rounded-full border border-gray-200 hover:bg-gray-100 transition-colors shadow-sm text-gray-700"
+              aria-label="Previous Slide"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <div className="flex items-center gap-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`h-3 rounded-full transition-all duration-300 ${
+                    currentSlide === index ? "w-8 bg-[#FF5C00]" : "w-3 bg-gray-300"
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+            <button 
+              onClick={nextSlide}
+              className="p-3 rounded-full border border-gray-200 hover:bg-gray-100 transition-colors shadow-sm text-gray-700"
+              aria-label="Next Slide"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* --- SERVICES SECTION --- */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <h2 className="text-4xl font-extrabold mb-16 text-center text-[#111827] animate-up tracking-tight">Our Services</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <div key={index} className="animate-up bg-white rounded-3xl p-8 border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-shadow duration-300">
+                <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-blue-600">
+                  <Icon className="w-7 h-7" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-slate-900">{service.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* --- ENTERPRISE TECH & AI ECOSYSTEM TICKER --- */}
+      <div className="w-full bg-gradient-to-b from-slate-50/60 via-white to-slate-50/60 py-28 border-y border-slate-200/80 overflow-hidden marquee-container relative">
+        <style dangerouslySetInnerHTML={{ __html: `
+          @keyframes scrollLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          @keyframes scrollRight {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+          }
+          .animate-scroll-left {
+            display: flex;
+            width: max-content;
+            animation: scrollLeft 40s linear infinite;
+          }
+          .animate-scroll-right {
+            display: flex;
+            width: max-content;
+            animation: scrollRight 40s linear infinite;
+          }
+          .marquee-container:hover .animate-scroll-left,
+          .marquee-container:hover .animate-scroll-right {
+            animation-play-state: paused;
+          }
+        `}} />
+
+        <div className="max-w-7xl mx-auto px-4 mb-16 text-center animate-up">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200/60 text-orange-600 text-xs font-semibold tracking-wide uppercase mb-4 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
+            Ecosystem & Infrastructure
+          </div>
+          <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">
+            Technologies We Utilize
+          </h2>
+          <p className="text-slate-600 mt-3 text-lg max-w-2xl mx-auto font-normal">
+            Engineered with industry-leading frameworks, advanced LLM models, and ultra-scalable cloud architectures.
+          </p>
+        </div>
+
+        <div className="relative w-full overflow-hidden">
+          <div className="absolute top-0 bottom-0 left-0 w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
+
+          {/* ROW 1: AI Tools & LLMs */}
+          <div className="flex animate-scroll-left gap-5 mb-6">
+            {[...aiTools, ...aiTools].map((tool, index) => {
+              const IconComponent = tool.icon;
               return (
-                <div key={index} className="flex items-center gap-2.5 px-4 py-1.5 rounded-lg border border-slate-900 bg-slate-900/40 text-slate-400 text-xs font-medium shrink-0">
-                  <IconComp className="w-3.5 h-3.5 text-indigo-400" />
-                  <span>{tech.name}</span>
+                <div 
+                  key={`ai-${index}`} 
+                  className="group bg-white/90 backdrop-blur-md px-5 py-3.5 rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-slate-200/80 hover:border-slate-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-0.5 transition-all duration-300 cursor-default flex items-center gap-4 shrink-0"
+                >
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${tool.color} transition-transform group-hover:scale-110 duration-300`}>
+                    <IconComponent className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-sm tracking-tight">{tool.name}</h4>
+                    <p className="text-slate-400 text-xs font-medium">{tool.category}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* ROW 2: Platforms & Frameworks */}
+          <div className="flex animate-scroll-right gap-5">
+            {[...platforms, ...platforms].map((tech, index) => {
+              const IconComponent = tech.icon;
+              return (
+                <div 
+                  key={`tech-${index}`} 
+                  className="group bg-white/90 backdrop-blur-md px-5 py-3.5 rounded-2xl shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-slate-200/80 hover:border-slate-300 hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:-translate-y-0.5 transition-all duration-300 cursor-default flex items-center gap-4 shrink-0"
+                >
+                  <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${tech.color} transition-transform group-hover:scale-110 duration-300`}>
+                    <IconComponent className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-sm tracking-tight">{tech.name}</h4>
+                    <p className="text-slate-400 text-xs font-medium">{tech.category}</p>
+                  </div>
                 </div>
               );
             })}
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* --- SERVICES GRID --- */}
-      <section className="max-w-6xl mx-auto px-6 py-20">
-        <div className="scroll-reveal text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">Capabilities</h2>
-          <p className="text-slate-400 text-sm">Engineered for accuracy, reliability, and speed.</p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {services.map((item, index) => {
-            const Icon = item.icon;
-            return (
-              <div 
-                key={index}
-                onMouseEnter={handleHoverEnter}
-                onMouseLeave={handleHoverLeave}
-                className="scroll-reveal bg-slate-900/50 border border-slate-800/80 rounded-2xl p-6 flex flex-col justify-between hover:border-slate-700 transition-colors cursor-pointer"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <span className="text-[10px] font-semibold tracking-wider uppercase px-2 py-0.5 rounded bg-slate-800 text-slate-400">{item.badge}</span>
-                  </div>
-                  <h3 className="text-base font-bold text-white mb-2">{item.title}</h3>
-                  <p className="text-xs text-slate-400 leading-relaxed">{item.description}</p>
-                </div>
+      {/* --- TEAM SECTION --- */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <h2 className="text-4xl font-extrabold mb-16 text-center text-[#111827] animate-up tracking-tight">Meet the Experts</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {team.map((member, index) => (
+            <div key={index} className="animate-up group relative rounded-3xl overflow-hidden bg-gray-100">
+              <img 
+                src={member.image} 
+                alt={member.name} 
+                loading="lazy"
+                className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-90" />
+              <div className="absolute bottom-0 left-0 p-6 w-full">
+                <h4 className="text-xl font-bold text-white mb-1">{member.name}</h4>
+                <p className="text-blue-300 font-medium text-sm mb-3">{member.position}</p>
+                <p className="text-gray-300 text-sm leading-snug">{member.intro}</p>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
-      </section>
-
-      {/* --- COMPACT TESTIMONIAL CAROUSEL --- */}
-      <section className="scroll-reveal max-w-4xl mx-auto px-6 py-16">
-        <div className="bg-slate-900/40 border border-slate-800/80 rounded-3xl p-8 sm:p-10 relative overflow-hidden">
-          
-          <div className="overflow-hidden">
-            <div ref={trackRef} className="flex will-change-transform">
-              {testimonials.map((item, index) => (
-                <div key={index} className="w-full shrink-0 flex flex-col sm:flex-row items-center gap-6">
-                  <img 
-                    src={item.image} 
-                    alt={item.name} 
-                    className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover border border-slate-800 shrink-0" 
-                  />
-                  <div className="text-center sm:text-left">
-                    <p className="text-sm sm:text-base text-slate-200 font-medium leading-relaxed mb-4">{item.quote}</p>
-                    <div>
-                      <h4 className="text-xs sm:text-sm font-bold text-white">{item.name}</h4>
-                      <p className="text-xs text-slate-500">{item.role}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Navigation */}
-          <div className="flex items-center justify-between mt-8 pt-6 border-t border-slate-800/60">
-            <div className="flex items-center gap-1.5">
-              {testimonials.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => handleSlideChange(idx)}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
-                    activeSlide === idx ? "w-6 bg-indigo-500" : "w-1.5 bg-slate-800"
-                  }`}
-                  aria-label={`Slide ${idx + 1}`}
-                />
-              ))}
-            </div>
-            
-            <div className="flex items-center gap-2">
-              <button 
-                onClick={() => handleSlideChange(activeSlide - 1)}
-                onMouseEnter={handleHoverEnter}
-                onMouseLeave={handleHoverLeave}
-                className="p-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white transition-colors cursor-pointer"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-              <button 
-                onClick={() => handleSlideChange(activeSlide + 1)}
-                onMouseEnter={handleHoverEnter}
-                onMouseLeave={handleHoverLeave}
-                className="p-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white transition-colors cursor-pointer"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-
-        </div>
-      </section>
+      </div>
 
     </div>
   );
 }
+
+
+
+
+
+

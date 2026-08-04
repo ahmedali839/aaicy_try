@@ -108,6 +108,8 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
       </head>
       <body
         className={`${inter.className} bg-white dark:bg-black text-black dark:text-white transition-colors duration-300 antialiased min-h-screen flex flex-col`}

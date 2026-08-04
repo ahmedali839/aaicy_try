@@ -21,6 +21,7 @@ import ServicesSection from "../components/ServiceLists";
 import TechStackTicker from "../components/TechStackTicker";
 import VideoHero from "../components/Video-Hero";
 import BlurTextScroller from "../components/Arrow-Scrollbase"; // added scroll base component
+import WhyGsap from "../components/Hero_Paragraph";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -208,22 +209,10 @@ export default function Home() {
       </section>
 
       {/* Video Hero  */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 min-h-screen flex items-center">
-        <div className="flex justify-center w-full">
-          <video
-            className="w-full max-w-6xl h-[80vh] rounded-3xl shadow-2xl border border-black/10 dark:border-white/10 object-cover"
-            autoPlay
-            loop
-            muted
-            playsInline
-          >
-            <source src="/hero_video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </section>
-
       <VideoHero />
+
+{/* Scroll Parallax */}
+<WhyGsap />
 
       {/* Services Grid */}
       <ServicesSection />
