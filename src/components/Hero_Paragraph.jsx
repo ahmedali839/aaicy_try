@@ -1,166 +1,15 @@
-// import React, { useRef, useLayoutEffect } from 'react';
-// import gsap from 'gsap';
-// import ScrollTrigger from 'gsap/ScrollTrigger';
-
-// // Register ScrollTrigger early
-// if (typeof window !== "undefined") {
-//   gsap.registerPlugin(ScrollTrigger);
-// }
-
-// // Helper component to ensure natural text wrapping while allowing isolated animations
-// const Word = ({ children, className = "" }) => (
-//   <span className={`word inline-block opacity-0 translate-y-8 will-change-transform ${className}`}>
-//     {children}&nbsp;
-//   </span>
-// );
-
-// export default function WhyGsap() {
-//   const sectionRef = useRef(null); // yes to add here
-//   yes
-
-//   useLayoutEffect(() => {
-//     // gsap.context strictly scopes animations to this component and automatically cleans them up on unmount
-//     const ctx = gsap.context(() => {
-      
-//       // 1. Text Stagger Reveal
-//       // Animate opacity AND position together for a heavy, professional feel
-//       gsap.to('.word', {
-//         scrollTrigger: {
-//           trigger: sectionRef.current,
-//           start: "top 80%",
-//         },
-//         opacity: 1,
-//         y: 0,
-//         duration: 0.8,
-//         stagger: 0.05,
-//         ease: "power2.out" // Default smooth deceleration
-//       });
-
-//       // 2. SVG Decorator Pop-ins
-//       // Graphics scale and rotate in slightly after the text reveals
-//       gsap.fromTo('.decorator', 
-//         { 
-//           scale: 0, 
-//           rotation: -45, 
-//           opacity: 0 
-//         },
-//         {
-//           scrollTrigger: {
-//             trigger: sectionRef.current,
-//             start: "top 75%",
-//           },
-//           scale: 1,
-//           rotation: 0,
-//           opacity: 1,
-//           duration: 0.8,
-//           stagger: 0.2,
-//           ease: "back.out(1.7)",
-//           delay: 0.2
-//         }
-//       );
-
-//       // 3. Badge Load Animation
-//       gsap.from('.badge', {
-//         scrollTrigger: {
-//           trigger: sectionRef.current,
-//           start: "top 85%",
-//         },
-//         opacity: 0,
-//         y: 30,
-//         duration: 0.8,
-//         ease: "power2.out"
-//       });
-
-//       // 4. Custom Hover interactions (replacing CSS transitions)
-//       const hoverTargets = gsap.utils.toArray('.gsap-hover');
-//       hoverTargets.forEach(target => {
-//         target.addEventListener('mouseenter', () => gsap.to(target, { scale: 1.05, duration: 0.3, ease: "power2.out", overwrite: "auto" }));
-//         target.addEventListener('mouseleave', () => gsap.to(target, { scale: 1, duration: 0.3, ease: "power2.out", overwrite: "auto" }));
-//       });
-
-//     }, sectionRef);
-
-//     return () => ctx.revert(); // Critical cleanup for React architecture
-//   }, []);
-
-//   return (
-//     <section 
-//       ref={sectionRef} 
-//       className="w-full min-h-screen bg-[#111111] text-white py-32 px-6 md:px-12 lg:px-24 font-sans overflow-hidden selection:bg-[#0ae448] selection:text-black"
-//     >
-//       <div className="max-w-5xl mx-auto">
-        
-//         {/* Top Badge */}
-//         <div className="badge flex items-center gap-3 text-white/60 mb-12 font-mono text-sm tracking-wider">
-//           <svg className="w-5 h-5 animate-spin-slow text-[#0ae448]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-//             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4m11.314-5.657l-11.314 11.314m0-11.314l11.314 11.314" />
-//           </svg>
-//           <span>{`{`} Why GSAP® {`}`}</span>
-//         </div>
-
-//         {/* Animated Typography Block */}
-//         <h2 className="text-4xl md:text-5xl lg:text-[5.5rem] font-bold leading-[1.1] tracking-tight">
-//           <Word>GSAP</Word> <Word>allows</Word> <Word>you</Word> <Word>to</Word>
-          
-//           <span className="relative inline-block gsap-hover cursor-pointer">
-//             <Word className="text-[#0ae448]">effortlessly</Word>
-//             {/* Flower/Spark SVG */}
-//             <svg className="decorator absolute -top-8 -right-6 w-14 h-14 text-orange-400 z-10 pointer-events-none" viewBox="0 0 100 100" fill="currentColor">
-//               <path d="M50 0 C55 40 60 45 100 50 C60 55 55 60 50 100 C45 60 40 55 0 50 C40 45 45 40 50 0 Z" />
-//             </svg>
-//           </span>
-          
-//           <Word>animate</Word> <Word>anything</Word> <Word>JS</Word> <Word>can</Word> <Word>touch.</Word> <Word>Delivering</Word>
-          
-//           <span className="relative inline-block gsap-hover cursor-pointer">
-//             <Word className="text-[#0ae448]">silky-smooth</Word>
-//             {/* Wave SVG */}
-//             <svg className="decorator absolute -bottom-4 left-0 w-full h-4 text-green-500 z-10 pointer-events-none" viewBox="0 0 100 20" preserveAspectRatio="none" fill="none" stroke="currentColor" strokeWidth="4">
-//               <path d="M0 10 Q 25 20, 50 10 T 100 10" strokeLinecap="round"/>
-//             </svg>
-//           </span>
-          
-//           <span className="relative inline-block gsap-hover cursor-pointer">
-//             <Word>performance</Word>
-//             {/* Green Swirl SVG inside text */}
-//             <svg className="decorator absolute top-2 right-4 w-8 h-8 text-[#0ae448] z-10 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-//               <path strokeLinecap="round" strokeLinejoin="round" d="M12 4c4.418 0 8 3.582 8 8s-3.582 8-8 8-8-3.582-8-8" />
-//             </svg>
-//           </span>
-          
-//           <Word>and</Word> <Word>unmatched</Word> <Word>support</Word> <Word>so</Word> <Word>you</Word> <Word>can</Word> <Word>focus</Word> <Word>on</Word> <Word>the</Word>
-          
-//           <span className="relative inline-block gsap-hover cursor-pointer">
-//             <Word className="text-[#0ae448]">fun</Word> <Word className="text-[#0ae448]">stuff.</Word>
-//             {/* Underline SVG */}
-//             <svg className="decorator absolute -bottom-2 left-0 w-full h-6 text-[#0ae448] z-10 pointer-events-none" viewBox="0 0 100 24" preserveAspectRatio="none" fill="none" stroke="currentColor" strokeWidth="5">
-//               <path d="M5 20 Q 50 5, 95 18" strokeLinecap="round"/>
-//             </svg>
-//           </span>
-//         </h2>
-
-//       </div>
-//     </section>
-//   );
-// }
-
-
-
-
-
-
-
 import React, { useRef, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
+// Always register plugins to prevent SSR hydration errors
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-// Helper component kept intact, but default tracking adjusted to match the video's tight typography
+// Helper component for staggered text reveals without losing natural browser kerning
 const Word = ({ children, className = "" }) => (
-  <span className={`word inline-block opacity-0 translate-y-12 will-change-transform ${className}`}>
+  <span className={`word inline-block opacity-0 translate-y-8 will-change-transform ${className}`}>
     {children}&nbsp;
   </span>
 );
@@ -171,7 +20,7 @@ export default function WhyGsap() {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       
-      // 1. Text Stagger Reveal (Tightened for fluid wave effect)
+      // 1. Text Stagger Reveal (Opacity + Position together for professional feel)
       gsap.to('.word', {
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -179,12 +28,12 @@ export default function WhyGsap() {
         },
         opacity: 1,
         y: 0,
-        duration: 0.7, // Slightly longer duration
-        stagger: 0.025, // Much tighter stagger for the wave feel
-        ease: "power2.out"
+        duration: 0.8,
+        stagger: 0.03, // Fluid wave stagger
+        ease: "power2.out" // Default smooth easing
       });
 
-      // 2. Asterisk Petal Pop-ins (Exploding outward)
+      // 2. Asterisk Petal Pop-ins
       gsap.fromTo('.asterisk-petal', 
         { scale: 0, opacity: 0, transformOrigin: "center center" },
         {
@@ -194,15 +43,14 @@ export default function WhyGsap() {
           },
           scale: 1,
           opacity: 1,
-          duration: 0.5,
+          duration: 0.6,
           stagger: 0.08,
-          ease: "back.out(2)", // Adds that slight bounce seen in the video
+          ease: "back.out(2)",
           delay: 0.3
         }
       );
 
-      // 3. SVG Path Drawing (Recreating the DrawSVG effect)
-      // We set a high strokeDasharray in CSS/inline, and animate the offset to 0
+      // 3. SVG Path Drawing (Simulating DrawSVG without external plugins)
       gsap.fromTo('.draw-line',
         { strokeDashoffset: 1000 },
         {
@@ -213,7 +61,7 @@ export default function WhyGsap() {
           strokeDashoffset: 0,
           duration: 1.2,
           ease: "power2.out",
-          stagger: 0.3, // Delay each drawing line sequentially
+          stagger: 0.2,
           delay: 0.5
         }
       );
@@ -222,7 +70,7 @@ export default function WhyGsap() {
       gsap.from('.badge', {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 85%",
+          start: "top 80%",
         },
         opacity: 0,
         y: 20,
@@ -230,7 +78,7 @@ export default function WhyGsap() {
         ease: "power2.out"
       });
 
-      // 5. Custom Hover interactions
+      // 5. GSAP Hover Interactions (No CSS transitions allowed here)
       const hoverTargets = gsap.utils.toArray('.gsap-hover');
       hoverTargets.forEach(target => {
         target.addEventListener('mouseenter', () => gsap.to(target, { scale: 1.05, duration: 0.3, ease: "power2.out", overwrite: "auto" }));
@@ -239,7 +87,7 @@ export default function WhyGsap() {
 
     }, sectionRef);
 
-    return () => ctx.revert();
+    return () => ctx.revert(); // Cleanup memory leaks on unmount
   }, []);
 
   return (
@@ -247,27 +95,33 @@ export default function WhyGsap() {
       ref={sectionRef} 
       className="w-full min-h-screen bg-[#111111] text-[#f4f4f5] py-32 px-6 md:px-12 lg:px-24 font-sans overflow-hidden selection:bg-[#0ae448] selection:text-black"
     >
-      <div className="max-w-[1200px] mx-auto">
+      {/* Max width widened to 1100px to match the text wrapping of image-1 */}
+      <div className="max-w-[1100px] mx-auto">
         
-        {/* Updated Badge: Matched the { Why GSAP } look from the video */}
-        <div className="badge inline-flex items-center gap-2 mb-12 font-mono text-lg text-white/80">
-          <svg width="24" height="40" viewBox="0 0 24 40" fill="none" className="text-white">
+        {/* Badge */}
+        <div className="badge inline-flex items-center gap-2 mb-10 font-mono text-lg text-white/80">
+          <svg width="24" height="40" viewBox="0 0 24 40" fill="none">
             <path d="M16 4C12 4 8 8 8 16V24C8 32 12 36 16 36" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
           </svg>
           <span className="tracking-wide">Why GSAP®</span>
-          <svg width="24" height="40" viewBox="0 0 24 40" fill="none" className="text-white">
+          <svg width="24" height="40" viewBox="0 0 24 40" fill="none">
             <path d="M8 4C12 4 16 8 16 16V24C16 32 12 36 8 36" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
           </svg>
         </div>
 
-        {/* Animated Typography Block - Font sizes and leading adjusted for massive scale */}
-        <h2 className="text-4xl md:text-6xl lg:text-[7rem] font-medium leading-[1.05] tracking-tight">
+        {/* 
+          Typography Block Adjusted: 
+          - Reduced max text size from 7rem to 5.2rem.
+          - Increased leading (line-height) to 1.15 to prevent SVG overlapping.
+          - Removed all manual <br /> tags for fluid wrapping.
+        */}
+        <h2 className="text-4xl md:text-5xl lg:text-[5.2rem] font-medium leading-[1.15] tracking-tight">
           <Word>GSAP</Word> <Word>allows</Word> <Word>you</Word> <Word>to</Word>
           
-          <span className="relative inline-block asterisk-trigger cursor-pointer mr-4">
+          <span className="relative inline-block asterisk-trigger cursor-pointer mr-2 gsap-hover">
             <Word className="text-[#0ae448]">effortlessly</Word>
-            {/* Multi-colored Exploding Asterisk */}
-            <svg className="absolute -top-12 -right-16 w-24 h-24 z-10 pointer-events-none" viewBox="0 0 100 100" fill="none">
+            {/* Scaled down and repositioned asterisk */}
+            <svg className="absolute -top-8 -right-10 w-16 h-16 z-10 pointer-events-none" viewBox="0 0 100 100" fill="none">
               <path className="asterisk-petal text-[#0ae448]" fill="currentColor" d="M45 45 L20 20 A 15 15 0 0 1 40 10 L55 35 Z" />
               <path className="asterisk-petal text-[#f97316]" fill="currentColor" d="M55 45 L80 20 A 15 15 0 0 1 90 40 L65 55 Z" />
               <path className="asterisk-petal text-[#ec4899]" fill="currentColor" d="M55 55 L80 80 A 15 15 0 0 1 60 90 L45 65 Z" />
@@ -275,16 +129,16 @@ export default function WhyGsap() {
             </svg>
           </span>
           
-          <Word>animate</Word> <br className="hidden lg:block" /> <Word>anything</Word> <Word>JS</Word> <Word>can</Word> <Word>touch.</Word> <Word>Delivering</Word>
+          <Word>animate</Word> <Word>anything</Word> <Word>JS</Word> <Word>can</Word> <Word>touch.</Word> <Word>Delivering</Word>
           
-          <span className="relative inline-block cursor-pointer">
+          <span className="relative inline-block cursor-pointer gsap-hover">
             <Word className="text-[#0ae448]">silky-smooth</Word>
-            {/* Squiggly Wave Underline */}
-            <svg className="absolute -bottom-6 left-0 w-full h-8 z-10 pointer-events-none" viewBox="0 0 200 20" preserveAspectRatio="none">
+            {/* Wave tucked closer to the text base */}
+            <svg className="absolute -bottom-2 left-0 w-full h-4 z-10 pointer-events-none" viewBox="0 0 200 20" preserveAspectRatio="none">
               <path 
                 className="draw-line text-[#0ae448]" 
                 stroke="currentColor" 
-                strokeWidth="4" 
+                strokeWidth="5" 
                 strokeLinecap="round" 
                 fill="none" 
                 style={{ strokeDasharray: 1000 }}
@@ -293,10 +147,10 @@ export default function WhyGsap() {
             </svg>
           </span>
           
-          <span className="relative inline-block cursor-pointer mx-3">
+          <span className="relative inline-block cursor-pointer mx-2 gsap-hover">
             <Word>performance</Word>
-            {/* Green Looping 'e' Squiggle */}
-            <svg className="absolute top-4 -right-10 w-12 h-16 z-10 pointer-events-none" viewBox="0 0 40 60" fill="none">
+            {/* Loop repositioned to not float too high */}
+            <svg className="absolute -top-2 -right-6 w-10 h-14 z-10 pointer-events-none" viewBox="0 0 40 60" fill="none">
               <path 
                 className="draw-line text-[#0ae448]" 
                 stroke="currentColor" 
@@ -308,12 +162,12 @@ export default function WhyGsap() {
             </svg>
           </span>
           
-          <Word>and</Word> <Word>unmatched</Word> <Word>support</Word> <br className="hidden lg:block" /> <Word>so</Word> <Word>you</Word> <Word>can</Word> <Word>focus</Word> <Word>on</Word> <Word>the</Word>
+          <Word>and</Word> <Word>unmatched</Word> <Word>support</Word> <Word>so</Word> <Word>you</Word> <Word>can</Word> <Word>focus</Word> <Word>on</Word> <Word>the</Word>
           
-          <span className="relative inline-block cursor-pointer ml-3">
+          <span className="relative inline-block cursor-pointer ml-2 gsap-hover">
             <Word className="text-[#0ae448]">fun</Word> <Word className="text-[#0ae448]">stuff.</Word>
-            {/* Double Curly Underline */}
-            <svg className="absolute -bottom-8 left-0 w-full h-12 z-10 pointer-events-none" viewBox="0 0 250 40" preserveAspectRatio="none">
+            {/* Curls tucked up slightly to prevent bleeding into content below */}
+            <svg className="absolute -bottom-4 left-0 w-full h-10 z-10 pointer-events-none" viewBox="0 0 250 40" preserveAspectRatio="none">
               <path 
                 className="draw-line text-[#0ae448]" 
                 stroke="currentColor" 
