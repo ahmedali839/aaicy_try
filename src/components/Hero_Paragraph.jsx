@@ -15,7 +15,8 @@ const Word = ({ children, className = "" }) => (
 );
 
 export default function WhyGsap() {
-  const sectionRef = useRef(null);
+  const sectionRef = useRef(null); // yes to add here
+  yes
 
   useLayoutEffect(() => {
     // gsap.context strictly scopes animations to this component and automatically cleans them up on unmount
