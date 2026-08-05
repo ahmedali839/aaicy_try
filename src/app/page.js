@@ -167,6 +167,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       {/* Background Gradient Blob with Parallax */}
+      {/* Background Gradient Blob with Parallax here */}
       <div
         ref={parallaxBgRef}
         className="absolute top-0 left-1/2 -translate-x-1/2 w-200 h-200 bg-linear-to-tr from-brand-blue/20 to-brand-purple/20 blur-[120px] rounded-full pointer-events-none -z-10 will-change-transform"
