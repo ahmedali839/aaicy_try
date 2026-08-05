@@ -211,42 +211,8 @@ export default function Home() {
       {/* Video Hero  */}
       <VideoHero />
 
-{/* Scroll Parallax */}
-<WhyGsap />
-
       {/* Services Grid */}
       <ServicesSection />
-      {/* // old service section for reference */}
-      {/* <section
-        ref={servicesRef}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20"
-      >
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
-            Our Services
-          </h2>
-          <p className="text-gray-600 dark:text-gray-400">
-            Everything you need to dominate the digital landscape.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              ref={(el) => (cardsRef.current[index] = el)}
-              className="bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-2xl p-6 opacity-0 hover:-translate-y-2 hover:border-brand-blue/30 transition-all duration-300"
-            >
-              <div className="mb-4 bg-white dark:bg-white/5 w-16 h-16 rounded-xl flex items-center justify-center shadow-sm">
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                {service.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section> */}
 
       {/* TechStackTicker */}
       <TechStackTicker />
@@ -302,9 +268,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* scroll-base-card.js */}
-      <CoreFeaturesScroll />
 
       {/* --- WHY WE DO WHAT WE DO SECTION --- */}
       <div className="w-full bg-white py-24 px-4 sm:px-6 lg:px-8">
