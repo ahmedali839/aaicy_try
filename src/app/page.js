@@ -179,6 +179,7 @@ export default function Home() {
       >
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6">
           Building the{" "}
+          {/* hererer */}
           <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-blue to-brand-purple">
             Future
           </span>
