@@ -20,7 +20,7 @@ import CoreFeaturesScroll from "../components/CoreFeaturesScroll";
 import ServicesSection from "../components/ServiceLists";
 import TechStackTicker from "../components/TechStackTicker";
 import VideoHero from "../components/Video-Hero";
-import BlurTextScroller from "../components/Arrow-Scrollbase"; // added scroll base component
+import BlurTextScroller from "../components/Arrow-Scrollbase";
 import WhyGsap from "../components/Hero_Paragraph";
 
 if (typeof window !== "undefined") {
