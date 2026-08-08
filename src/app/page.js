@@ -392,6 +392,7 @@ export default function Home() {
       </div>
 
       {/* Arrow Scroll base */}
+      {/* Arrow Scroll base */}
       <BlurTextScroller />
     </div>
   );
