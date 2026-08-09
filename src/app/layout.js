@@ -277,7 +277,7 @@ export default function RootLayout({ children }) {
           {process.env.NEXT_PUBLIC_GA_ID && (
             <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
           )}
-        {/* </ThemeProvider>  */}
+        </ThemeProvider> 
       </body>
     </html>
   );
