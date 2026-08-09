@@ -277,6 +277,7 @@ export default function RootLayout({ children }) {
           {process.env.NEXT_PUBLIC_GA_ID && (
             <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
           )}
+        {/* // so it's ThemeProvider that wraps the entire body content, allowing for theme management across the application. */}
         </ThemeProvider> 
       </body>
     </html>
