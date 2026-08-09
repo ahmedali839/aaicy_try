@@ -166,7 +166,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      {/* Background Gradient Blob with Parallax */}
+    
       {/* Background Gradient Blob with Parallax here */}
       <div
         ref={parallaxBgRef}
@@ -191,22 +191,18 @@ export default function Home() {
           intelligent AI solutions.
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <MagneticButton>
             <Link
               href="/contact-form"
               className="px-8 py-4 bg-brand-coral text-white font-semibold rounded-full hover:opacity-90 transition flex items-center gap-2 shadow-[0_0_20px_rgba(249,115,22,0.3)]"
             >
               Get Started <ArrowRight className="w-4 h-4" />
             </Link>
-          </MagneticButton>
-          <MagneticButton>
             <Link
               href="/services-list"
               className="px-8 py-4 bg-transparent border border-black/20 dark:border-white/20 text-black dark:text-white font-semibold rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition"
             >
               View Services
             </Link>
-          </MagneticButton>
         </div>
       </section>
 
@@ -216,10 +212,7 @@ export default function Home() {
       {/* Services Grid */}
       <ServicesSection />
 
-      {/* TechStackTicker */}
-      <TechStackTicker />
-
-      {/* Advanced Stack Section with Dividers */}
+           {/* Advanced Stack Section with Dividers */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 mb-16 relative">
         <div
           ref={stackRef}
@@ -391,7 +384,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Arrow Scroll base */}
       {/* Arrow Scroll base */}
       <BlurTextScroller />
     </div>
