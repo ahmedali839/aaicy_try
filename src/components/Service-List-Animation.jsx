@@ -6,7 +6,7 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-// Tailored mock data with embedded SVGs to ensure immediate rendering
+// // Tailored mock data with embedded SVGs to ensure immediate rendering
 const services = [
   {
     title: "1-on-1 Online Teaching",
