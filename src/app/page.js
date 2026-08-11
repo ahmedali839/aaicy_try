@@ -22,6 +22,7 @@ import TechStackTicker from "../components/TechStackTicker";
 import VideoHero from "../components/Video-Hero";
 import BlurTextScroller from "../components/Arrow-Scrollbase";
 import WhyGsap from "../components/Hero_Paragraph";
+import LandingPage from "../components/Landing_Page";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -173,6 +174,8 @@ export default function Home() {
         className="absolute top-0 left-1/2 -translate-x-1/2 w-200 h-200 bg-linear-to-tr from-brand-blue/20 to-brand-purple/20 blur-[120px] rounded-full pointer-events-none -z-10 will-change-transform"
       />
       {/* Hero Section */}
+<LandingPage />
+
       <section
         ref={heroRef}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20 pb-32"

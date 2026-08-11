@@ -50,7 +50,7 @@ const FEATURE_COLUMNS = [
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [featuresOpen, setFeaturesOpen] = useState(true);
+  const [featuresOpen, setFeaturesOpen] = useState(false);
   const [compactNavbar, setCompactNavbar] = useState(false);
   const pathname = usePathname();
   const { theme, resolvedTheme, setTheme } = useTheme();
