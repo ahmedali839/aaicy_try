@@ -144,7 +144,7 @@
 
 
 
-import { Inter } from "next/font/google";
+import { Inter, Inter_Tight } from "next/font/google";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Navbar from "../components/Navbar";
@@ -155,6 +155,7 @@ import CustomCursor from "../components/CustomCursor";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+const interTight = Inter_Tight({ subsets: ["latin"], variable: "--font-inter-tight" });
 
 export const metadata = {
   title: {
@@ -261,7 +262,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
-        className={`${inter.className} bg-white dark:bg-black text-slate-900 dark:text-white transition-colors duration-300 antialiased min-h-screen flex flex-col`}
+        className={`${inter.className} ${interTight.variable} bg-white dark:bg-black text-slate-900 dark:text-white transition-colors duration-300 antialiased min-h-screen flex flex-col`}
         suppressHydrationWarning
       >
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
