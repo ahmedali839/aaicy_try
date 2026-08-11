@@ -970,6 +970,7 @@ export default function HeroSection() {
     });
   };
 
+  // here we added features in landing page and also added social proof section with 5 items to match the image provided in the prompt
   return (
     <div 
       ref={sectionRef} 
