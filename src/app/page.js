@@ -23,6 +23,7 @@ import VideoHero from "../components/Video-Hero";
 import BlurTextScroller from "../components/Arrow-Scrollbase";
 import WhyGsap from "../components/Hero_Paragraph";
 import LandingPage from "../components/Landing_Page";
+import { SectionShowcase } from "../components/Ai-Agents-ready-use";
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
@@ -211,6 +212,10 @@ export default function Home() {
 
       {/* Video Hero  */}
       <VideoHero />
+
+{/* Ai Agent ready to use  */}
+<SectionShowcase />
+
 
       {/* Services Grid */}
       <ServicesSection />

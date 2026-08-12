@@ -1,0 +1,249 @@
+.sectionShowcase {
+  align-items: center;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  justify-content: center;
+  padding: 40px 15px;
+  position: relative;
+}
+.intro {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  max-width: 1200px;
+  position: relative;
+  width: min(1200px, 100%);
+}
+.badgeWrapper {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+}
+.badge {
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #d4d4d4;
+  border-radius: 6px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  overflow: hidden;
+  padding: 5px 10px;
+  position: relative;
+}
+.badgeLabel {
+  align-items: center;
+  color: #09090b;
+  display: flex;
+  font-family: "Plus Jakarta Sans";
+  font-size: 11.8px;
+  font-weight: 400;
+  justify-content: center;
+  letter-spacing: 0.48px;
+  line-height: 14.4px;
+  text-align: center;
+  white-space: nowrap;
+}
+.headingWrapper {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  max-width: 600px;
+  position: relative;
+  width: min(600px, 100%);
+}
+.heading {
+  align-items: center;
+  color: #09090b;
+  display: flex;
+  font-family: "Plus Jakarta Sans";
+  font-size: 48px;
+  font-weight: 600;
+  justify-content: center;
+  letter-spacing: -1.92px;
+  line-height: 67px;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+.descriptionWrapper {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  max-width: 650px;
+  position: relative;
+}
+.description {
+  color: #71717a;
+  font-family: "Plus Jakarta Sans";
+  font-size: 16.5px;
+  font-weight: 400;
+  letter-spacing: 0.36px;
+  line-height: 1.5;
+  margin: 0;
+  text-align: center;
+}
+.cardGrid {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 40px;
+  justify-content: center;
+  max-width: 1200px;
+  position: relative;
+  width: min(1200px, 100%);
+}
+.cardWrapper {
+  align-items: flex-start;
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  max-width: 373.34px;
+  min-width: 0;
+  position: relative;
+}
+.card {
+  align-items: center;
+  background-color: #fafafa;
+  border-radius: 25px;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  max-width: 1200px;
+  overflow: hidden;
+  padding: 40px 15px 0;
+  position: relative;
+  width: 100%;
+}
+.cardTitleWrapper {
+  align-items: flex-start;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  max-width: 400px;
+  position: relative;
+  width: 100%;
+}
+.cardTitle {
+  align-items: center;
+  color: #09090b;
+  display: flex;
+  font-family: "Plus Jakarta Sans";
+  font-size: 30px;
+  font-weight: 600;
+  justify-content: center;
+  letter-spacing: -1.2px;
+  line-height: 42px;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+.cardDescriptionWrapper {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  max-width: 650px;
+  position: relative;
+}
+.cardDescription {
+  color: #71717a;
+  font-family: "Plus Jakarta Sans";
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.36px;
+  line-height: 1.5;
+  margin: 0;
+  min-height: 57px;
+  text-align: center;
+}
+.pricingWrapper {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  padding: 0 0 20px;
+  position: relative;
+}
+.pricingLink {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 5px;
+  position: relative;
+  cursor: pointer;
+}
+.pricingLabel {
+  align-items: center;
+  color: #09090b;
+  display: flex;
+  font-family: "Plus Jakarta Sans";
+  font-size: 15.3px;
+  font-weight: 400;
+  justify-content: center;
+  letter-spacing: 0.48px;
+  line-height: 28.8px;
+  margin-top: -1px;
+  text-align: center;
+  white-space: nowrap;
+}
+.arrow {
+  display: inline-block;
+  height: 10px;
+  position: relative;
+  width: 10px;
+  border-top: 2px solid #09090b;
+  border-right: 2px solid #09090b;
+  transform: rotate(45deg);
+  margin-left: 5px;
+}
+.cardImage {
+  height: auto;
+  max-width: 100%;
+  position: relative;
+  width: 309px;
+  margin-top: 10px;
+}
+@media (max-width: 900px) {
+  .cardGrid {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .cardWrapper {
+    flex: 0 0 auto;
+    margin: 0 auto;
+    width: min(373.34px, 100%);
+  }
+}
+@media (max-width: 640px) {
+  .sectionShowcase {
+    gap: 48px;
+    padding: 32px 15px;
+  }
+  .heading {
+    font-size: 32px;
+    line-height: 1.2;
+    white-space: normal;
+  }
+  .description,
+  .cardDescription {
+    white-space: normal;
+    font-size: 14px;
+  }
+  .description br,
+  .cardDescription br {
+    display: none;
+  }
+}
