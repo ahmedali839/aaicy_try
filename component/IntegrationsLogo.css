@@ -1,0 +1,42 @@
+.integrations-container {
+    overflow: hidden;
+    position: relative;
+    height: 100px; /* Adjust height as necessary */
+}
+
+.scrolling-icons {
+    display: flex;
+    animation: scroll 15s linear infinite;
+}
+
+.icon-wrapper {
+    margin: 0 10px; /* Space between icons */
+}
+
+.integration-icon {
+    width: 50px; /* Adjust size as necessary */
+    height: 50px;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+/* Hide white layers on sides */
+.integrations-container::before,
+.integrations-container::after {
+    content: '';
+    position: absolute;
+    width: 50px; /* Adjust width as necessary */
+    height: 100%;
+    background-color: white;
+    z-index: 1;
+}
+
+.integrations-container::before {
+    left: 0;
+}
+
+.integrations-container::after {
+    right: 0;
+}

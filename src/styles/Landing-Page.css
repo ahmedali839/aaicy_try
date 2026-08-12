@@ -1,0 +1,357 @@
+.hero-scroll-track {
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+  animation: heroScrollUp 18s linear infinite;
+}
+
+/* Move upward by 50% because we duplicated the image twice */
+@keyframes heroScrollUp {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+/* Optional: pause on hover */
+.hero-scroll-track:hover {
+  animation-play-state: paused;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll-track {
+    animation: none;
+  }
+}
+
+.heroSection {
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    rgba(244, 244, 245, 1) 50%,
+    rgba(250, 250, 250, 1) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: scroll;
+  padding: 15px;
+  position: relative;
+}
+
+.overlayMask {
+  height: 400px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.contentWrapper {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  justify-content: center;
+  max-width: 1200px;
+  position: relative;
+  width: 1200px;
+}
+
+.heroContent {
+  align-items: flex-start;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 13.9px;
+  justify-content: center;
+  max-width: 1200px;
+  padding: 80px 0 0;
+  position: relative;
+}
+
+.headingWrapper {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  max-width: 700px;
+  min-width: 700px;
+  position: relative;
+}
+
+.headingContainer {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.heading {
+  color: #09090b;
+  font-family: "Plus Jakarta Sans-SemiBold", Helvetica;
+  font-size: 48px;
+  font-weight: 600;
+  letter-spacing: -1.92px;
+  line-height: 67.2px;
+  margin-top: -1px;
+  position: relative;
+  width: fit-content;
+}
+
+.descriptionWrapper {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  max-width: 650px;
+  position: relative;
+}
+
+.descriptionContainer {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  padding: 0 0 0.69px;
+  position: relative;
+  width: 100%;
+}
+
+.description {
+  color: #52525b;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 16.3px;
+  font-weight: 400;
+  letter-spacing: 0.36px;
+  line-height: 28.8px;
+  margin-top: -1px;
+  position: relative;
+  width: fit-content;
+}
+
+.actions {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  justify-content: center;
+  padding: 11.1px 0 20px;
+  position: relative;
+}
+
+.primaryButtonWrapper,
+.secondaryButtonWrapper {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  position: relative;
+}
+
+.primaryButton {
+  align-items: center;
+  background-color: #27272a;
+  border-radius: 8px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  padding: 8px 15px 9px;
+  position: relative;
+}
+
+.primaryButtonLabel {
+  align-items: center;
+  color: #ffffff;
+  display: flex;
+  font-family: "Inter-Medium", Helvetica;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 16.8px;
+  padding-bottom: 0.8px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.secondaryButton {
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 5px;
+  justify-content: center;
+  padding: 9px 15px;
+  position: relative;
+}
+
+.secondaryButtonLabel {
+  align-items: center;
+  color: #27272a;
+  display: flex;
+  font-family: "Inter-Medium", Helvetica;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 16.8px;
+  margin-top: -1px;
+  padding-bottom: 0.8px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.playIcon {
+  align-items: flex-start;
+  aspect-ratio: 0.84;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 16px;
+}
+
+.playIconInner {
+  /* background-image: url("./vector.svg"); */
+  background-size: 100% 100%;
+  height: 71.04%;
+  left: 23.44%;
+  position: absolute;
+  top: 14.48%;
+  width: 71.88%;
+}
+
+.secondaryButtonBorder {
+  border: 1px solid #d4d4d4;
+  border-radius: 8px;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.socialProof {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 20px;
+  padding: 1.1px 0 0;
+  position: relative;
+}
+
+.circles {
+  height: 60px;
+  position: relative;
+  width: 220px;
+}
+
+.socialProofContent {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 10px;
+  justify-content: center;
+  position: relative;
+}
+
+.liveBadge {
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 6px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 8px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 5px 10px;
+  position: relative;
+}
+
+.liveBadgeBorder {
+  border: 1px solid #e7e9ec;
+  border-radius: 6px;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.statusIndicator {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  position: relative;
+}
+
+.statusPulse {
+  aspect-ratio: 1;
+  background-color: #48d87d;
+  border-radius: 100px;
+  height: 18px;
+  left: calc(50% - 9px);
+  opacity: 0.12;
+  position: absolute;
+  top: -5px;
+  width: 18px;
+}
+
+.statusDot {
+  aspect-ratio: 1;
+  background-color: #48d87d;
+  border-radius: 100px;
+  height: 8px;
+  position: relative;
+  width: 8px;
+}
+
+.liveLabel {
+  align-items: center;
+  color: #09090b;
+  display: flex;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 12px;
+  font-weight: 400;
+  justify-content: center;
+  letter-spacing: 0.48px;
+  line-height: 14.4px;
+  margin-top: -1px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.trustedText {
+  align-items: center;
+  color: #52525b;
+  display: flex;
+  font-family: "Inter-Regular", Helvetica;
+  font-size: 12.7px;
+  font-weight: 400;
+  letter-spacing: 0.28px;
+  line-height: 25.2px;
+  margin-top: -1px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.contentImage {
+  height: 1200px;
+  position: relative;
+  width: 464px;
+}
