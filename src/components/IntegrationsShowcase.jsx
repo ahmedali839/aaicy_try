@@ -5,7 +5,7 @@ const integrations = [
   { src: '/Hero/Integrations1.svg', alt: 'Integration 1' },
   { src: '/Hero/Integrations2.svg', alt: 'Integration 2' },
   { src: '/Hero/Integrations3.svg', alt: 'Integration 3' }, 
-  // i have added comment only
+  i have added comment only
   // Add more integration images as needed
 ];
 
