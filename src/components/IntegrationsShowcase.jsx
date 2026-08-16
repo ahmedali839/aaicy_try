@@ -7,7 +7,7 @@ const integrations = [
   { src: '/Hero/Integrations3.svg', alt: 'Integration 3' }, 
   // i have added comment only
   // Add more integration images as needed
-  Add more integration images as needed
+  // Add more integration images as needed
 ];
 
 export const IntegrationsShowcase = () => {
