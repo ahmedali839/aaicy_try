@@ -43,5 +43,6 @@ const IntegrationsLogo = () => {
   );
 };
 //  ok, we have created the IntegrationsLogo component. Now, let's create the CSS file to style it and add the infinite scroll effect.
+// Integrations-Logo.css
 
 export default IntegrationsLogo;
