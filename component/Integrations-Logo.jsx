@@ -29,7 +29,7 @@ const IntegrationsLogo = () => {
     { id: 23, src: 'https://img.icons8.com/color/48/000000/dropbox.png', alt: 'Dropbox' },
     { id: 24, src: 'https://img.icons8.com/color/48/000000/microsoft-onedrive-2019.png', alt: 'OneDrive' },
   ];
-
+// here 
   return (
     <div className="integrations-logo-container">
       <div className="integrations-logo-inner">
