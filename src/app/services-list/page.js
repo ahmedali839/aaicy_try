@@ -5,7 +5,36 @@ import { Globe, Palette, BrainCircuit, Bot, ArrowRight } from "lucide-react";
 import gsap from "gsap";
 
 export default function ServicesList() {
-  
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "Service",
+        "position": 1,
+        "name": "Website Development",
+        "description": "We build scalable, robust web applications using Next.js, React, and cutting-edge web technologies."
+      },
+      {
+        "@type": "Service",
+        "position": 2,
+        "name": "Website Designing",
+        "description": "We craft stunning user interfaces and seamless user experiences with modern aesthetics and buttery-smooth animations."
+      },
+      {
+        "@type": "Service",
+        "position": 3,
+        "name": "AI Automations",
+        "description": "We integrate artificial intelligence to streamline your workflows."
+      },
+      {
+        "@type": "Service",
+        "position": 4,
+        "name": "AI Agents",
+        "description": "We develop custom AI agents that interact with your users, gather data, and perform complex tasks autonomously."
+      }
+    ]
+  };
 
   const cardsRef = useRef([]);
   const titleRef = useRef(null);
