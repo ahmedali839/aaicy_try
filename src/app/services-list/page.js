@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react";
 import { Globe, Palette, BrainCircuit, Bot, ArrowRight } from "lucide-react";
 import gsap from "gsap";
 
+// update the import path for the icons based on your project structure
+
 export default function ServicesList() {
   const jsonLd = {
     "@context": "https://schema.org",
