@@ -24,6 +24,8 @@ function SendButton() {
   );
 }
 
+/// update the contact form to work with more better flow of submissions
+
 export default function ContactForm() {
   const [isSent, setIsSent] = useState(false);
   
