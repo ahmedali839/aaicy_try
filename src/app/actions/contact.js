@@ -66,6 +66,7 @@ export async function processContactForm(prevState, formData) {
 
     // 1. Send to Formspree
     // 2. Send to Discord/Slack Webhook (Optional, requires ENV var)
+
     const formspreeResponse = await fetch("https://formspree.io/f/mdkldary", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -73,8 +74,10 @@ export async function processContactForm(prevState, formData) {
     });
 
     if (!formspreeResponse.ok) {
-      throw new Error("Failed to send to Formspree");
+      throw new Error("Failed to send to Formspree"); // make it more robust by logging the error or sending it to an error tracking service
+      // make it more robust by logging the error or sending it to an error tracking service
     }
+
 
     // 2. Send to Discord/Slack Webhook (Optional, requires ENV var)
     if (process.env.DISCORD_WEBHOOK_URL) {
