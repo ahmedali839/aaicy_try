@@ -65,6 +65,7 @@ export async function processContactForm(prevState, formData) {
     }
 
     // 1. Send to Formspree
+    // 2. Send to Discord/Slack Webhook (Optional, requires ENV var)
     const formspreeResponse = await fetch("https://formspree.io/f/mdkldary", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
