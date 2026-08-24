@@ -64,13 +64,7 @@ export async function processContactForm(prevState, formData) {
       }
     }
 
-    // 1. Send to Formspree
-    const formspreeResponse = await fetch("https://formspree.io/f/mdkldary", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(validatedData),
-    });
-
+  
     if (!formspreeResponse.ok) {
       throw new Error("Failed to send to Formspree");
     }
