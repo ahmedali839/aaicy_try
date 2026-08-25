@@ -3,7 +3,6 @@
 import { z } from "zod";
 
 // Create Zod Schema for strict validation
-// In this schema, we define the expected structure and constraints for the contact form data. Each field has specific validation rules to ensure that the data is in the correct format before processing it further. 
 export const contactSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please provide a valid email address." }),
