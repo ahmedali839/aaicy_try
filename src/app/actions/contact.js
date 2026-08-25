@@ -2,15 +2,6 @@
 
 import { z } from "zod";
 
-// Create Zod Schema for strict validation
-export const contactSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  email: z.string().email({ message: "Please provide a valid email address." }),
-  phone: z.string().optional(),
-  type: z.enum(["Business", "Support", "Other"]),
-  concern: z.string().min(10, { message: "Message must be at least 10 characters." }),
-  cfTurnstileResponse: z.string().min(1, { message: "Please complete the CAPTCHA." }),
-});
 
 // Basic in-memory rate limiter (For production, use Redis/Vercel KV)
 const rateLimitMap = new Map();
