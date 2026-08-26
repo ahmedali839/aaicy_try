@@ -6,6 +6,8 @@ import gsap from "gsap";
 
 // update the import path for the icons based on your project structure
 
+// update the import path for the icons based on your project structure
+
 export default function ServicesList() {
   const jsonLd = {
     "@context": "https://schema.org",
