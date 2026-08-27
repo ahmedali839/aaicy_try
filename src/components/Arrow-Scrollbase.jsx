@@ -222,5 +222,6 @@ export default function BlurTextScroller() {
       </main>
 
     </div>
+    // here is the key of the code, the animation is done by gsap and scrolltrigger, the text will blur when it is not in focus and will be clear when it is in focus, also the arrow will appear when the text is in focus
   );
 }
