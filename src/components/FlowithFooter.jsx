@@ -1049,6 +1049,9 @@ const SocialIcon = ({ href, children, label }) => (
   </a>
 );
 
+console.log("Start REndering Water-Animations");
+
+
 export default function FlowithFooter() {
   const containerRef = useRef(null);
   const canvasRef = useRef(null);
