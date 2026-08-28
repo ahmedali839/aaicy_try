@@ -1331,7 +1331,21 @@ export default function FlowithFooter() {
         };
       }
 
-      
+      createDoubleFBO(w, h) {
+        let fbo1 = this.createFBO(w, h);
+        let fbo2 = this.createFBO(w, h);
+        return {
+          width: w,
+          height: h,
+          texelSizeX: 1 / w,
+          texelSizeY: 1 / h,
+          read: () => fbo1,
+          write: () => fbo2,
+          swap: () => {
+            [fbo1, fbo2] = [fbo2, fbo1];
+          },
+        };
+      }
 
       initFBOs() {
         const w = Math.floor(this.res.w);
