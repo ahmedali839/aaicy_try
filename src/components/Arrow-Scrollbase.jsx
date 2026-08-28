@@ -5,14 +5,14 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const SCROLLER_ITEMS = [
-  // "Websites",
-  // "AI Agents",
-  // "CRM",
-  // "Automation",
-  // "Voice Calling Agent",
-  // "Social Media Automation",
-  // "Chatbots",
-  // "Lead Generation",
+  "Websites",
+  "AI Agents",
+  "CRM",
+  "Automation",
+  "Voice Calling Agent",
+  "Social Media Automation",
+  "Chatbots",
+  "Lead Generation",
   "GSheets, Insta, WA",
   "Business Automation",
   "Let's get started",
