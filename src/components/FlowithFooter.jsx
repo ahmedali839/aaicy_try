@@ -1786,6 +1786,7 @@ export default function FlowithFooter() {
 
           <div className="text-xs md:text-sm text-gray-400 font-sans text-center w-full select-none">
             Copyright © 2026 Flowith Technologies Pte. Ltd. All rights reserved.
+            Copyright © 2026 Flowith Technologies Pte. Ltd. All rights reserved.
           </div>
         </div>
       </div>
