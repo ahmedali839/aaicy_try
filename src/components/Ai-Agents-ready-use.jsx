@@ -5,7 +5,18 @@ import classes from "../styles/Ai-Agents-ready-use.module.css";
 import { IntegrationsShowcase } from "./IntegrationsShowcase";
 
 
-
+const showcaseCards = [
+  {
+    title: "Social poster",
+    description: (
+      <>
+        Multi-channel posting with automatic post
+        <br />
+        creation.
+      </>
+    ),
+    image: "/Hero/box-1-mask-group.png",
+},
 {
     title: "DM chatbot",
     description: (
