@@ -1,6 +1,4 @@
-// import box1MaskGroup from "/Hero/box-1-mask-group.png";
-// import box1MaskGroup2 from "./box-1-mask-group-2.png";
-// import image from "./Hero/image.png";
+// import box1MaskGroup from "/Hero/box-
 import classes from "../styles/Ai-Agents-ready-use.module.css";
 import { IntegrationsShowcase } from "./IntegrationsShowcase";
 
