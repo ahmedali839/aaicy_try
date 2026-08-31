@@ -4,7 +4,6 @@
 import classes from "../styles/Ai-Agents-ready-use.module.css";
 import { IntegrationsShowcase } from "./IntegrationsShowcase";
 
-// it's simplest version
 
 const showcaseCards = [
   {
