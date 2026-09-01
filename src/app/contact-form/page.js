@@ -13,7 +13,7 @@ function SendButton() {
   return (
     <button
       disabled={pending}
-      className="w-full py-4 bg-gradient-to-r from-brand-blue to-brand-purple text-white font-semibold rounded-xl hover:opacity-90 transition-opacity shadow-lg shadow-brand-blue/20 flex items-center justify-center gap-2 disabled:opacity-50"
+      className="w-full py-4 bg-linear-to-r from-brand-blue to-brand-purple text-white font-semibold rounded-xl hover:opacity-90 transition-opacity shadow-lg shadow-brand-blue/20 flex items-center justify-center gap-2 disabled:opacity-50"
     >
       {pending ? (
         <>Sending <Loader2 className="w-5 h-5 animate-spin" /></>
