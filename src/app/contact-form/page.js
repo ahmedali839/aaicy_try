@@ -156,6 +156,7 @@ export default function ContactForm() {
               </div>
 
               <SendButton />
+              {/* here replaced bg-gradient with bg-linear to remove warning */}
             </form>
           )}
         </div>
