@@ -60,12 +60,12 @@ export default function ContactForm() {
   return (
     <div className="relative pt-32 pb-24 min-h-screen flex items-center justify-center">
       {/* Background Gradient Disk */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-tr from-brand-blue/20 to-brand-purple/20 blur-[150px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-linear-to-tr from-brand-blue/20 to-brand-purple/20 blur-[150px] rounded-full pointer-events-none -z-10" />
 
       <div className="max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={headerRef} className="text-center mb-16">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6">
-            Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-purple">Touch</span>
+            Get in <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-blue to-brand-purple">Touch</span>
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400">
             Let's discuss how we can help you build the future.
