@@ -88,7 +88,7 @@ export default function ServicesList() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={titleRef} className="text-center mb-20">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6">
-            Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-purple">Services</span>
+            Our <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-blue to-brand-purple">Services</span>
           </h1>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">
             Comprehensive solutions designed to elevate your brand and optimize your operations.
