@@ -52,7 +52,32 @@ export default function ServicesList() {
     );
   }, []);
 
-
+  const services = [
+    {
+      title: "Website Development",
+      description: "We build scalable, robust web applications using Next.js, React, and cutting-edge web technologies. Our code is clean, our architectures are sound, and our final products are production-ready.",
+      icon: <Globe className="w-12 h-12 text-blue-500" />,
+      hoverColor: "hover:border-blue-500/50 hover:shadow-blue-500/20",
+    },
+    {
+      title: "Website Designing",
+      description: "We craft stunning user interfaces and seamless user experiences. Using tools like Tailwind CSS and GSAP, we breathe life into designs with modern aesthetics and buttery-smooth animations.",
+      icon: <Palette className="w-12 h-12 text-pink-500" />,
+      hoverColor: "hover:border-pink-500/50 hover:shadow-pink-500/20",
+    },
+    {
+      title: "AI Automations",
+      description: "We integrate artificial intelligence to streamline your workflows. From automated data entry to intelligent decision-making systems, we help you save time and focus on what truly matters.",
+      icon: <BrainCircuit className="w-12 h-12 text-purple-500" />,
+      hoverColor: "hover:border-purple-500/50 hover:shadow-purple-500/20",
+    },
+    {
+      title: "AI Agents",
+      description: "We develop custom AI agents that interact with your users, gather data, and perform complex tasks autonomously. Enhance your business capabilities with our state-of-the-art conversational bots.",
+      icon: <Bot className="w-12 h-12 text-green-500" />,
+      hoverColor: "hover:border-green-500/50 hover:shadow-green-500/20",
+    },
+  ];
 
   return (
     <div className="relative pt-32 pb-24 min-h-screen">
