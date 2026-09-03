@@ -95,7 +95,26 @@ export default function ServicesList() {
           </p>
         </div>
 
-  
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              ref={(el) => (cardsRef.current[index] = el)}
+              className={`bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 transition-all duration-300 group ${service.hoverColor} hover:shadow-2xl`}
+            >
+              <div className="bg-white/5 w-24 h-24 rounded-2xl flex items-center justify-center mb-8">
+                {service.icon}
+              </div>
+              <h2 className="text-3xl font-semibold text-white mb-4">{service.title}</h2>
+              <p className="text-gray-400 text-lg leading-relaxed mb-8">
+                {service.description}
+              </p>
+              <button className="text-white font-medium flex items-center gap-2 group-hover:gap-4 transition-all">
+                Learn more <ArrowRight className="w-5 h-5 text-brand-blue" />
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
