@@ -117,6 +117,16 @@ const aiTools = [
   { name: "Hugging Face", category: "Open Source Hub", icon: Database, color: "text-amber-600 bg-amber-50" },
 ];
 
+const platforms = [
+  { name: "React.js", category: "UI Library", icon: Code2, color: "text-cyan-600 bg-cyan-50" },
+  { name: "Next.js 15", category: "Full-Stack Framework", icon: Globe, color: "text-slate-900 bg-slate-100" },
+  { name: "Google Cloud", category: "Cloud Infrastructure", icon: Database, color: "text-blue-600 bg-blue-50" },
+  { name: "Perplexity", category: "Neural Search", icon: Sparkles, color: "text-teal-600 bg-teal-50" },
+  { name: "Vercel", category: "Edge Deployment", icon: Zap, color: "text-slate-900 bg-slate-100" },
+  { name: "Node.js", category: "Backend Runtime", icon: Terminal, color: "text-green-600 bg-green-50" },
+  { name: "MongoDB", category: "NoSQL Database", icon: Database, color: "text-emerald-600 bg-emerald-50" },
+  { name: "Tailwind CSS", category: "Styling System", icon: Layers, color: "text-sky-600 bg-sky-50" },
+];
 
 // --- Component ---
 
