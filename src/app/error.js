@@ -34,6 +34,7 @@ export default function Error({ error, reset }) {
           className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border border-black/20 dark:border-white/20 font-semibold rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300"
         >
           Return Home
+          {/* we can scale it to more better handling the errors */}
         </Link>
       </div>
     </div>
