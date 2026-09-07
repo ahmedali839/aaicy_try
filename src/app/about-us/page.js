@@ -341,9 +341,3 @@ export default function AboutUs() {
     </div>
   );
 }
-
-
-
-
-
-
