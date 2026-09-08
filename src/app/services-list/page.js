@@ -96,6 +96,7 @@ export default function ServicesList() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* all right, tomorrow, we will continue this section */}
           {services.map((service, index) => (
             <div
               key={index}
