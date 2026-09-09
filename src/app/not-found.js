@@ -20,6 +20,7 @@ export default function NotFound() {
       >
         <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
         Return Home
+        {/* its been done and ok for now */}
       </Link>
     </div>
   );
