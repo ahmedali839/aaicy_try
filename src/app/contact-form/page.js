@@ -88,76 +88,7 @@ export default function ContactForm() {
               </button>
             </div>
           ) : (
-            <form action={formAction} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Full Name *</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    className="w-full px-4 py-3 bg-white dark:bg-black/50 border border-black/10 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent placeholder-gray-400 dark:placeholder-gray-500 transition-all"
-                    placeholder="John Doe"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Email Address *</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-3 bg-white dark:bg-black/50 border border-black/10 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent placeholder-gray-400 dark:placeholder-gray-500 transition-all"
-                    placeholder="john@example.com"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Phone Number</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    className="w-full px-4 py-3 bg-white dark:bg-black/50 border border-black/10 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent placeholder-gray-400 dark:placeholder-gray-500 transition-all"
-                    placeholder="+1 (555) 000-0000"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="type" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Inquiry Type</label>
-                  <select
-                    id="type"
-                    name="type"
-                    className="w-full px-4 py-3 bg-white dark:bg-black/50 border border-black/10 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent placeholder-gray-400 dark:placeholder-gray-500 transition-all appearance-none"
-                  >
-                    <option value="Business">Business</option>
-                    <option value="Support">Support</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="concern" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Message / Concern *</label>
-                <textarea
-                  id="concern"
-                  name="concern"
-                  required
-                  rows={6}
-                  className="w-full px-4 py-3 bg-white dark:bg-black/50 border border-black/10 dark:border-white/10 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent placeholder-gray-400 dark:placeholder-gray-500 transition-all resize-none"
-                  placeholder="Tell us about your project or concern..."
-                />
-              </div>
-              
-              <div className="flex justify-center my-4">
-                {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ? (
-                  <Turnstile siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY} />
-                ) : (
-                  <input type="hidden" name="cf-turnstile-response" value="bypass-in-dev" />
-                )}
-              </div>
-
-              <SendButton />
-              {/* here replaced bg-gradient with bg-linear to remove warning */}
-            </form>
+  
           )}
         </div>
       </div>
