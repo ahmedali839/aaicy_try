@@ -12,7 +12,6 @@ To run this application:
 npm run dev
 ```
 
-## Modern File-Based Routing (App Router)
 
 This project now uses Next.js App Router (recommended in modern Next.js)
 through the `app/` directory.
