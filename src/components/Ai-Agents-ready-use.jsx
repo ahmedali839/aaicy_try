@@ -85,7 +85,7 @@ export const SectionShowcase = () => {
           ))}
         </div>
       </section>
-      {/* <IntegrationsShowcase /> */}
+      <IntegrationsShowcase /> // it's commented out now.
     </>
   );
 };
