@@ -220,7 +220,6 @@ export default function BlurTextScroller() {
           </div>
         ))}
       </main>
-
     </div>
   );
 }
