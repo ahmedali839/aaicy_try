@@ -567,6 +567,59 @@ const cardData = [
 
 export default function FeatureCardsSection() {
   return (
-   
+    <section className="relative w-full min-h-screen bg-[#FAF6EF] flex items-center justify-center px-6 py-24 overflow-hidden font-sans">
+      
+      {/* --- Ambient Bottom-Left Mesh Glow --- */}
+      <div 
+        className="absolute -bottom-24 -left-24 w-96 h-96 bg-gradient-to-tr from-purple-400/30 via-pink-400/20 to-transparent rounded-full blur-3xl pointer-events-none"
+      />
+
+      {/* --- Background Dashed Grid Pattern --- */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-40"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, #e2dacd 1px, transparent 1px),
+            linear-gradient(to bottom, #e2dacd 1px, transparent 1px)
+          `,
+          backgroundSize: "72px 72px",
+        }}
+      />
+
+      {/* --- Main Cards Container --- */}
+      <div className="max-w-7xl mx-auto w-full z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-end">
+          {cardData.map(({ id, title, description, Icon }) => (
+            <div
+              key={id}
+              className="
+                group relative bg-white rounded-[32px] p-8 sm:p-9
+                shadow-[0_4px_25px_rgba(0,0,0,0.03)]
+                hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)]
+                transform-gpu transition-all duration-300 ease-out
+                hover:-translate-y-8 cursor-pointer
+                flex flex-col justify-start min-h-[410px]
+                will-change-transform border border-amber-50/50
+              "
+            >
+              {/* Icon */}
+              <div className="mb-7 flex items-center justify-start">
+                <Icon />
+              </div>
+
+              {/* Title */}
+              <h3 className="text-3xl font-bold text-[#0F172A] mb-4 tracking-tight">
+                {title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-[#475569] text-[15px] leading-relaxed font-normal">
+                {description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
